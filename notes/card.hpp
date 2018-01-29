@@ -53,25 +53,48 @@ Suit2 c2 = Suit2::Hearts2;
 
 // A card is a Rank AND Suit...
 // We can build this using a pair. Pair is vocabulary type. This is reasonable,
-// but not in out problem domain.
+// but not in our problem domain.
 using Card = std::pair<Rank, Suit>;
 Card c;
 c.first = Ace;
-c.second = Spades;
+c.second = Spades; // We can do better than this, build a class
 
 // Technically this is a class.
-struct Card
+// A card is a Rank AND Suit...
+// (struct and class are fundamentally the same, just a difference in privacy)
+// with struct, everything is public by default
+// where class is private by default
+class Card
 {
+    // const key-word makes object (and sub-objects) non-modifiable, we shouldn't make these const
+    // declares a constructor taking a rank and a suit as arguments
+    Card(Rank r, Suit s) : rank(r), suit(s) // The right way
+    {
+        /*
+        rank = r; // The wrong way.
+        suit = s;
+         */
+    }
+    
+    // Now we want the opposite of the constructor -- a destructor
+    ~Card(){
+        
+    }
+   
+    
+private: //using this keyword, we make these objects private
     Rank rank;
-    Suit suit;
+    Suit suit; // 'suit' is a sub-object
 }
 
-// With struct, we cna now write;
-Card c;
-c.rank = Ace;
-c.suit = Spades;
+// With struct, we can now write:
+void f () {
+    Card c;
+    c.rank = Ace;
+    c.suit = Spades;
+}
 
-
+#if 0
 //Type alias..
 
 
