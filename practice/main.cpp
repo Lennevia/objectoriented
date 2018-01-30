@@ -9,5 +9,5 @@ int main()
     // needs its main logic
     std::cout << "hello world\n";
     
-
+    return 0;
 }

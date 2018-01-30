@@ -1,3 +1,5 @@
+#include "card.cpp"
+
 // We need a way to keep track of the card types that exist in a deck of cards
 // Therefore, we need to create a Rank and Suit type to keep track of the
 // different cards
@@ -35,4 +37,4 @@ struct Card
 {
     Rank r;
     Suit s;
-}
+}; 
