@@ -1,4 +1,13 @@
+// Tells header file to only include it once ( should be in every header file)
+// This is equivalent to the use of #ifndef CARD_HPP
+//                                  #define CARD_HPP, etc
+//                                  #endif
+// #if 0 removes text for preprocessing, better than a comment can be disregarded
 #pragma once
+
+// Think about how to partition game into something more modular
+
+
 
 // A card is basicallly a pair of rank and suit
 //
@@ -91,7 +100,25 @@ class Card
         this->suit = c.suit;
         return @this;
     }
-]
+    
+    // Accessor functions (sometimes called observers
+    
+    // Mutators or modifier functions
+    // Think about the need for a mutator before creating it for a private member,
+    // they might be private for a reason
+    void set_rank(Rank r) { rank = r; }
+    void set_suit(Suit s) { suit = s; }
+    
+    
+    // In-class member function defs are implicitly inline
+    Rank get_rank() const { return rank; }
+    Suit get_suit() const { return suit; }
+    
+    // A friend can access private members of this class
+    // This can indicate that separate (logical) components are not in face separate
+    // if a friend can modify private members
+    /* friend bool operator==(Card a, Card b); */
+
     
     // Now we want the opposite of the constructor -- a destructor
     ~Card(){
@@ -103,6 +130,25 @@ private: //using this keyword, we make these objects private
     Rank rank;
     Suit suit; // 'suit' is a sub-object
 };
+
+// Two cards are equal when they have the same rank and suit
+//
+// IN general, define == to mean that two objects represent the
+// same entity. This means you can *substitute* equal values as
+// inputs to (certain) functions and expect equal results.
+inline
+bool Card::operator==(Card a, Card b){
+    return a.rank == b.rank && a.suit == b.suit;
+}
+
+// IF you define ==, you had better define != also
+inline
+bool Card::operator!=(Card a, Card b){
+    return !(a == b);
+}
+
+// IF we get an error that includes 'symbol', we are probably breaking the ONE-DEF-RULE
+// An error with "undefined symbols" has the declaration of something but no definition
 
 
 
@@ -122,19 +168,6 @@ struct Card{
     Rank rank;
 };
 
-// Two cards are equal when they have the same rank and suit
-//
-// IN general, define == to mean that two objects represent the
-// same entity. This means you can *substitute* equal values as
-// inputs to (certain) functions and expect equal results.
-bool operator==(Card a, Card b){
-    return a.rank == b.rank && a.suit == b.suit;
-}
-
-// IF you define ==, you had better define != also
-bool operator!=(Card a, Card b){
-    return !(a == b);
-}
 
 
 

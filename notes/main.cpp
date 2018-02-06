@@ -1,6 +1,17 @@
 #include "card.hpp"
 
-#include <iostream>
+#include <iostream> // This adds about 40K lines to process
+
+// inline is used to cut down process time
+// But now, inline function is used to unify definitions
+// Then the compiler has the option to pick between which def it wants to
+// use in the case that it's called -> Leading to undefined behavior
+//
+// Moral of the story: use inline with small header files, but it's
+// normally in better practice to abstract header definitions with a source file
+//
+// this separates the *interface* of a class from its *implementation*
+inline int foo() { return 42; }
 
 int main()
 {
