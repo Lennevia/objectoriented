@@ -1,47 +1,35 @@
-// Implement a value-semantic string class. Your class should support the following syntaxes:
-# include <iostream>
-# include <cstring>
+// Implement a value-semantic string class.
+
+#pragma once // lets declare this header file just once
 
 // We only really care about strlen, strncpy, and
 class String
 {
 public:
-    
-  
-        Box(int width, int length, int height)
-        : m_width(width), m_length(length), m_height(height) // member init list
-        
-        
     // Default construct: string s;
-    String()
-    {
-        len = 1; // make room for a null pointer
-        str = new char[len];
-        str[len - 1] = '\0'; // assign null char
-    }
-    
-    
+    String();
+   
     // Construct and assign from a literal value: string s1 = "hello";
     //                                            s1 = "foo";
-    
-        // Implicit constructor call to initialize new object with C string
-    String(const char *input)
-    {
-        nlength = strlen(input)+1 ;
-        nstring = new char[nlength];
-        for(int i = 0; i < (nlength - 1); i++)
-        {
-            nstring[i] = input[i];
-        }
-        nstring[(nlength-1)] = NULL;
-    }
-    
+    String(const char *input);
+
     // Copy construct and assign
     // string s2 = s1;
     // s2 = s1; // s2 == s1
+    String(const String& s);
+    
+    
+    // If you write:
+    //    c1 = c2;
+    // "this" is a pointer to c1.
+    String& operator=(const String& s);
+
     
     // Compare
     // s1 == s1;
+    String operator==(String a, String b);
+    
+
     
     // Order: lexicographical comparison
    // s1 < s1;
@@ -75,8 +63,19 @@ public:
 private:
     int len;
     char* str;
-    
 }
+
+
+
+inline bool
+operator==(String a, String b) {
+    
+    
+    return a.get_rank() == b.get_rank() &&
+    a.get_suit() == b.get_suit();
+}
+
+
 
 
 
