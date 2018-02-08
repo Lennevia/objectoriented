@@ -22,7 +22,7 @@ public:
     // If you write:
     //    c1 = c2;
     // "this" is a pointer to c1.
-    String& operator=(const String& s);
+//    String& operator=(const String& s);
 
     
     // Compare

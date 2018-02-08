@@ -1,0 +1,44 @@
+& - And
+| - or
+^ - xor
+~ - complement
+<<- left shift
+>>- right shift
+
+Xor a value with itself = get 0's
+Xor value with all 1's, get complement
+Xor with 0's, get self
+
+<< by 1, you double your number
+Shifts give undefined behavior when used with signed 
+
+Nmod: not on midterm, but a cool thing to understand
+
+Mask: pushing a number to the left
+
+Placed into an if loop to see if a number is part of a set
+- this is actually performed at compile time and costs no run time
+
+
+Integers used to represent sets using bit operations
+Ts = Ts | (1 << 3)
+Ts & ~(1 << 3) // just the 0 falls out
+
+"If you see someone doing bit tricks, they're probably gonna get some errors in their code because they don't understand the language."
+
+Signed bits:
+-4 = ~4 + 1
+
+Zero extraction: inserting 0's during shifts
+
+When shifting  >> right with a negative number, if a 1 is the MSB, we place a 1 after the shift
+
+If dealing with bit shifts or bit tricks, use unsigned integers
+
+Don't ever left or right shift a signed integer, the behavior is undefined and meaningless
+
+
+
+
+
+
