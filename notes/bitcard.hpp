@@ -1,6 +1,11 @@
 #pragma once
 
-#include <iostream>
+// we don't want to include iostream bc it adds like 40K lines of code, so
+//#include <iostream>
+
+// we can use the following line instead
+
+
 
 // Defines a new type (user-defined type). Sometimes called
 // a kind of type constructor (ignore that).
@@ -44,10 +49,11 @@ enum Suit {
 //
 class Card {
 public:
-    Card() : bits()
-    {
-        
-    }
+    // let the bits have a value that is indeterminate, so we don't have to initialize it
+    // we will have to assign values to them later
+    // like writing int x;
+    // we assign default for indeterminate value
+    Card() = default;
     
     // Use c-style casts to make sure r and s are unsigned ints
     Card(Rank r, Suit s)
@@ -87,6 +93,12 @@ public:
 private:
     unsigned char bits;
 };
+
+// A deck is now a sequence of cards. This is OK for now
+//
+// This is calle da type alias, we're using it to make
+// creating vectors of type Card easier
+using Deck = std::vector<Card>;
 
 
 // Two cards are equal when they have the same

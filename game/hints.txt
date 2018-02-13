@@ -1,0 +1,10 @@
+Must install curses.h separately through command line 
+
+g++ -std=c++12 <FILE> -lcurses
+
+SP.O -> A.out <- l file
+
+Make a cmake file to declare curses is a part of Santa paravia
+
+
+// Could also use QT, sml, apt get
