@@ -1,0 +1,66 @@
+Abstraction
+Types
+Objects
+Type specifiers
+
+New struct s() is valid, but without new it's totally wrong
+
+Narrowing conversion - large set of values to a small set of values
+	example = change a double to a float
+	Why do we care about narrowing conversions?: potentially lose information
+	In a superset of info, the subset will be converted and some values may be lost
+
+What is a value? An abstract entity, that really exists outside of the program
+	He uses value and entity interchangeably
+
+Object? It is a portion of memory that has an address that maps it to one value, the bits 	in the object give you a representation of one value
+
+Type? Type tells one how to interpret a value
+
+Define abstraction: 
+What does it mean to make something abstract?
+
+What is type safety?
+	example of breaking type safety: float f = 0.45;
+					 int *p = (int*)8f;
+					 (*p)++;
+					 cout << f;
+	This is not type safe because we are using an object for something it wasn't 	
+	created to be, we are making the float into something it's not and at the end we 
+	won't know what will be printed to output.
+
+What must be true after copying an object? The objects must have the same value aka the 	values of those objects must be equal after copying.
+	Why? We must meet our expectations. We expect that to be true so we much each that 	expectance
+
+Creating a random number:
+#include <random>
+
+std::default_random_device prng;
+std::bernoulli_deistribution coin(0.75); // The 0.75 makes it 3/4 likely a heads will 
+coin(pong);				 //turn up when flipping the coin
+Std::uniform_int_distribution<> d6;(1,6)
+d6(prng)
+
+//For shuffle:
+Stf::shuffle(deck.begin(), deck.end(), prng)
+// What if you want to organize the cards?
+Must sort spades diamonds clubs hearts
+Even if we sort different decks in the same way, they may not be identical 
+
+Lexicographical comparison:
+	if(A.S < B.S)
+		return true;
+	if(B.S < A.S)
+		return false;
+	return A.R < P.R;
+
+Interesting: NaN  NaN.= false
+	     NaN ==NaN
+
+
+
+
+
+
+
+
