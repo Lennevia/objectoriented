@@ -1,0 +1,18 @@
+Value Representation:
+1. Enumeration
+2. Aggregation (or Composition) (class/struct) <- tuple
+3. Alternation (union/oop) <- variant
+4. Repetition (a set of values of unspecified length, ex. A string, vector)  <- vector 
+5. Association (look up a tutorial on standard map)  <- map
+
+Singleton - a variable set with exactly one entity
+	  - this is technically a design pattern
+
+Design pattern - includes Singleton & Multiton
+	       - basically recipes for patterns that are not directly supported by the 			 language
+
+Interface (to a data type):
+Contracts on Functions and Classes
+Example. double sqrt(double D); // in this function, we have the contract that D >= 0
+** Hey has created rational.cpp, rational.hpp as an example for contract **
+-> The precondition of a function is the contract a user of the function must follow
