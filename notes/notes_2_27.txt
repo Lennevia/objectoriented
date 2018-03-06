@@ -16,3 +16,16 @@ Contracts on Functions and Classes
 Example. double sqrt(double D); // in this function, we have the contract that D >= 0
 ** Hey has created rational.cpp, rational.hpp as an example for contract **
 -> The precondition of a function is the contract a user of the function must follow
+
+
+Contracts:
+Preconditiond & postconditions: he might have us write a contract on next exam
+
+Narrow contract: defines a set of solutions for expected outputs, not for undefined or unexpected values. Constructors normally have narrow contracts. 
+
+Wide contract: defines paths for both expected and unexpected values that could be output from a function. Will accept invalid input, but will throw an error about it (sometimes a bad idea for constructors, because it is already defined that bad input can be accepted). Wide conditions have hella error codes. When taking in the invalid values for the constructor, one has to check for validity, then there must be another check when copying a value as this could propagate bad input. 
+
+
+At the outermost level of a network, one should have a wide contract in order to secure the system. Example: entering in a credit card and only valid credit cards are allowable -> this can be exploited. 
+
+Correct by construction: must validate the code before allowing it to go further in the code -> this involves exceptions -> sometimes called straight-line code -> optimization
