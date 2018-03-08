@@ -1,0 +1,98 @@
+Enumeration : { act, two, three, ....
+
+Composition: Rank * Suit
+  (AND)			-> { (A, S), (2, S), .... }
+
+Pair <R,S>
+Tuple <R,S>
+
+suitCard = R * S
+jokerCard = c
+
+Card = suitCard U jokerCard
+
+Union (and) {
+	suitCard s;
+	jokerCard j;
+}
+
+Discriminated Union
+Struct Card {
+	int label;
+	union (andData{			// Something in here is a variant, I think
+		suitCard s;
+		jokerCard j;
+	};
+};
+
+
+
+
+Nested classes are fine
+
+In card.hpp
+
+Class Card {
+public: 
+	enum Kind{
+		Standard, 
+		Joker
+	};
+
+
+private:
+	union Value {			//Unions must not be passed around, keep private
+		standardCard sc;	// It's a cardinal sin to pass them around
+		JokerCard jc;
+		Value(StandardCard c) : sc(c) {}
+		Value(JokerCard c) : jc(c) {}
+
+	};
+Public:
+	// Creates a standard card. This establishes an invariant.
+	// Plural of invariant is invariants *not* invariance.
+	Card(StandardCard c)
+		:kind(standard), val(c)
+	{}
+
+	//invariant: When kind == Joker, the active member of val is jc
+	Card(JokerCard c)
+		: kind(Joker), val(c)
+	{}
+
+	Kind get_kind() { return kind; }
+	bool is_standard() const { return kind == Standard; }
+	bool is_joker() const { return kind == Joker; }
+
+	StandardCard get_standard_card(){
+	// Do not access a member of a union without first asserting that the kind 
+	// matches the active member
+		assert(is_standard()); // Check before it's passed through, narrow contract
+		return val.sc;
+	
+	}
+
+	JokerCard get_joker_card(){
+		assert(is_joker());
+		return val.jc;
+
+	}
+	
+	Suit get_rank() const {
+		return val.sc.get_rank();
+	}
+
+	Suit get_suit() const {
+		return val.sc.get_suit();
+	}
+
+	Suit get_color() const {
+		return val.sc.get_color();
+	}
+
+
+Private:
+	Kind kind;
+	Value val;
+};
+

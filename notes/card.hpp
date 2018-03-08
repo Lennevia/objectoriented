@@ -19,7 +19,7 @@
 
 // How do you represent a pair of things?
 
-// Defines a new type ( a used-defined type). Sometimes called
+// Defines a new type ( a user-defined type). Sometimes called
 // a kind of type constructor (ignore that).
 //
 // enum will begin count at 0, so Ace will be 0, we may choose to explicitly
