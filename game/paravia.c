@@ -47,7 +47,7 @@ tknox@mac.com
 #include <string.h>
 #include <time.h>
 #include <stdlib.h>
-#include <curses.h>
+// #include <curses.h>
 
 /* Declare an enum to emulate a Boolean. */
 enum TrueFalse {True, False};
