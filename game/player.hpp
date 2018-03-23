@@ -7,6 +7,10 @@
  */
 #include <string.h>
 
+/* Function definitions that use the player class */
+void InitializePlayer(player *Me, int year, int city, int level, char *name,
+                      boolean MorF);
+
 /* Declare our player definition. */
 struct Player
 {

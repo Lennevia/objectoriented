@@ -5,10 +5,6 @@
 #include <stdlib.h>
 // #include <curses.h>
 
-/* Declare an enum to emulate a Boolean. */
-enum TrueFalse {True, False};
-typedef enum TrueFalse boolean;
-
 /* Declare our player definition. */
 struct Player
 {
@@ -36,13 +32,11 @@ char MaleTitles[8][15] = {"Sir", "Baron", "Count", "Marquis", "Duke",
 
 /* Declare our female titles. */
 char FemaleTitles[8][15] = {"Lady", "Baroness", "Countess", "Marquise",
-    "Duchess", "Grand Duchess", "Princess",
-    "* H.R.H. Queen"};
+    "Duchess", "Grand Duchess", "Princess", "* H.R.H. Queen"};
 
 /* Our prototypes. */
 int main(void);
 int Random(int);
-void InitializePlayer(player*, int, int, int, char*, boolean);
 void AddRevenue(player *);
 int AttackNeighbor(player *, player *);
 void BuyCathedral(player *);
@@ -80,10 +74,11 @@ void getPlayers(int);
 int main(void)
 {
     player MyPlayers[6];
-    int NumOfPlayers, level;
+    int NumOfPlayers;
+    int level;
     int people = 1; // Initiailize to 1 because at least one person must play
     char string[255], name[25];
-    boolean MorF;
+    bool MorF;
     
     /* Initialize the random number generator seed. */
     srand(time(NULL));

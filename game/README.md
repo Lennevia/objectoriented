@@ -22,6 +22,15 @@ But a very important class as it's passed around by almost every function within
 logic.
 
 Another big change I'm going to attempt to make is converting all the char arrays into
-strings. This is c++, we can do that. 
+strings. This is c++, we can do that.
+
+Ideally, I want to be able to harvest functions from the paravia.c file and to keep the
+best track of what I've already converted to c++, I want to create a copy of paravia
+where I can simply extract pieces of the game from this and eventually decimate
+the copy of this file. Effectively crossing off a to-do list of sorts.
+
+Right now I'm looking at InitializePlayer() and I'm not really sure how the pointer part will work with the strings, so we'll see how that goes I guess!
+AKA: Do pointers pointing to strings point to the whole string or just the first character and then
+         to follow up, would I then need to iterate through them in order to get a string? 
 
 
