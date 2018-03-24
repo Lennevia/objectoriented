@@ -34,3 +34,10 @@ AKA: Do pointers pointing to strings point to the whole string or just the first
          to follow up, would I then need to iterate through them in order to get a string? 
 
 
+Start unravelling the main function:
+Working with converting the char arrays to strings. There is a point when information is accepted, and the c programmer then takes the last character off the input char array in order to get rid of the
+'\n' character. I'm not sure yet if this will be an issue.
+AKA: Does cin automatically copy the end of line character using getline? Or is it ignored?
+
+
+

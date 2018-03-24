@@ -61,6 +61,6 @@ struct Player
     bool IsBankrupt;
     bool IsDead;
     bool IWon;
-    bool MaleOrFemale;      // This is 2018, we should have a nonbinary option
+    bool MaleOrFemale; // This is 2018, we should have a nonbinary option
     bool NewTitle;
 };
