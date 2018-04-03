@@ -1,0 +1,154 @@
+Inheritance: Supports the ability to represent alternatives; represents a set of alternatives
+
+Example: 
+
+struct B {	// base class, this should be closed for modification due to 
+		// the derived dependencies
+	virtual void print() = 0; // VIRTUAL FUNCTION -> POLYMORPHIC
+}
+
+struct D1 : B{	// derived class 1
+	void print() override; 	// VIRTUAL FUNCTION -> POLYMORPHIC
+}
+
+struct D2 : B{	// derived class 2
+	void print() override; 	// VIRTUAL FUNCTION -> POLYMORPHIC
+}
+
+void print(B& input){
+	input.print();	// virtual function call
+			// Compiler dispatches functions: here we talk about 
+			// dynamic dispatch : known at compile time
+			// static dispatch: 
+}
+
+---------------------------------------------
+
+Solid Principles: these are supposed to apply to object oriented, an acronym
+Open/closed
+
+---------------------------------------------
+
+When do you use inheritance? 
+Why? To represent alternatives
+
+If a base class gives us alternatives, what do virtual functions give us? What design problem are we trying to solve with their existence? Gives us the ability to define a particular function's behavior by parts - each override gives a new line or definition added to the virtual function. 
+
+Virtual function: literally building a table of definitions based on the derived classes.
+If you have a virtual base class, you almost certainly want a virtual destructor. 
+
+Example:
+
+Struct B{
+	~B(){}
+}
+
+Struct s : B{
+	std::vector<string> v;
+	s() : v(1<<20, READ("usr/share/dict/words")
+	{}
+}
+
+Void destroy(B & b){
+	delete b;	// Calls a destructor: which destructor?
+			// invokes 
+}
+
+
+Int main{
+	destroy(new s);	
+}
+	
+If you have base classes and have virtual functions ( a polymorphic class) : you must have a virtual destructor
+
+Constructors and destructors are special member functions, the trivial definitions can be created as needed by the compiler 
+
+Don't have pointers to derived classes - could end up recursively deleting from the pointer up to the base class 
+|-------|
+|   B1  |	// base class
+|-------|
+|   B2  |
+|-------|
+|   D   |	// pointer
+|-------|
+
+---------------------------------------------
+
+Polymorphic: If a class has at least one virtual method, it's a polymorphic class
+
+Abstract Class: at least one sure virtual function: must have an override of this class somewhere. Cannot make direct calls to this pure virtual function
+---------------------------------------------
+
+The open/close principle:
+Base class is open to derived classes, closed to modification. It'll do what you want without the need to be maintained.
+
+Expression problems: check
+
+Double dispatch: check, AVOID MULTIPLE DISPATCH, DIFFICULT TO KEEP TRACK OF THINGS
+
+Virtual table: how to implement in language 
+
+Multiple Inheritance: c++ only 
+
+Interfaces
+
+Virtual Inheritance 
+
+Visitor pattern 
+
+	    f	    g 	    h
+|-------|-------|-------|-------|
+|   B   |  f1	|	|
+|-------|-------|-------|-------|		EXPRESSION 
+|   D1  |	|  f2	|			PROBLEM
+|-------|-------|-------|-------|
+|   D2  |	|	|  f2
+|-------|-------|-------|-------|
+
+Struct B{
+	virtual bool EQ(B &b) = 0
+	virtual EQ_D1(D1 &d) { return false; }
+	virtual EQ_D2(D2 &d) { return false; }
+}
+
+Void print(B& b)
+{
+	b.print(flags);
+}
+  |-------|
+B |   0   |	
+  |-------|
+D1|   f1  |
+  |-------|
+D2|   f2  |	
+  |-------|
+D3|   f3  |	
+  |-------|
+
+
+Void equal( B &b1, B &b2)
+{}
+
+Struct D1 : B{
+	bool eq(B& b){
+		return b.eq.D1(*this) // what's the static type of this? It's the pointer 				      // to D1
+	}	
+}
+
+Struct D2 : B{
+	bool eq(B& b){
+		return b.eq.D2(*this) // what's the type of this? It's the pointer to D2
+	}	
+}
+
+	    B	    D1 	    D2
+|-------|-------|-------|-------|
+|   B   |   0	|   0	|   0
+|-------|-------|-------|-------|		
+|   D1  |   0	|  f1	| false			
+|-------|-------|-------|-------|
+|   D2  |   0	| false	|  f2
+|-------|-------|-------|-------|
+
+
+
