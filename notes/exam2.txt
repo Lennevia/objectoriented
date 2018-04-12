@@ -1,0 +1,81 @@
+//Before I got here
+
+Pre and post conditions:
+Pre must happen
+Post w example - be able to write example function
+
+Wide and narrow contracts
+Contract is functions pre and post conditions
+Narrow check in precondition
+Wide check in wide contracts
+Narrow contract - if your inputs don't satisfy precond, it is undefined behavior
+ Wide contract defined behavior - THROW EXCEPTIONS
+
+Int f0 = open("file", o-rdonly)
+If(FD < 0)
+	ERRNd
+
+
+Int x;
+cin >> x;
+if(cin.fail()
+	cin.baD()
+	cin.good()
+if(cin)
+
+//Narrowing and widening contracts I guess
+P->Q ^ Q-/>P
+
+N <-R^N?=0	N<-R
+
+Postconditions as a contract is widened: strengthen them
+
+What if you want to widen something low level for a thing with a million lines of code?
+Google, MS, Facebook want to use a str format different from theirs:
+Must be widened correct
+
+What design problem does inheritance solve?
+The ability to represent alternatives: 
+	example: Hearts and jokers
+
+Three situations/cases as this shows up: 
+	1. Containers of polymorphic objects
+	2. Tree like data structures ( Recursive data structures ) 
+		 - why we're doing son:
+		It has a choice of int/string/etc..
+	3. System boundaries
+
+Show base classes and derived class
+Writing a high performance network: get overhead of virtual function 
+
+Inheritance different from a discriminated union/variant?
+Disc union: another way to represent alternatives - solves same kinds of problems
+When do you choose to use a disc union over inheritance?
+-Extensibility is an issue here, if you want to be able to extend your classes, 
+You would choose inheritance. If you want to make copies of properties NOT INHERITANCE.
+-constructors cannot be inherited
+
+Public and private in hesitance:
+Public members inherited privately is PUBLIC
+	-why? Inheritance is a derived relationship
+Private inherited publicly are PRIVATE to base class
+Public members inherited privately: derived class can use them, but that's it
+Protected members inherited protectedly: protected
+
+Static and dynamic type:
+If I declare a var, what is the static type?: int x
+	base
+	dynamic type of object: whatever you call it
+
+Design problem virtual functions solve?
+They enable polymorphism, but that's not the point. Virtual functions just allow each input type allowable. 
+Piecewise definition
+
+Pure virtual and virtual: 
+What is a pure virtual function? It equals zero, there is no definition- you must provide part of the definition. Non-virtual function cannot be overwritten, override not overwrite
+A class in which any function is virtual?
+What is an abstract class?
+
+
+
+
