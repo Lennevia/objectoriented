@@ -1,0 +1,82 @@
+Public: is-a
+Private: has-a
+
+
+
+Protected accès/inhertiance
+Multiple inheritance
+Virtual inheritance
+Something that looks like interflaces
+LSP -> interface/inpl inheritance --- we'll talk about this Tuesday
+
+Footgunability
+//JSON
+Struct array: public value, 		<- interface inheritance, must be public since we 
+					expect to use the array
+	      public vector <value*>	<- implementation inheritance, can be private
+					
+{}
+
+|----------|
+| value    |
+|----------|
+| vcc      |
+|----------|
+| array    |
+|----------|
+
+Struct B {int n;}
+Struct D1 : B {..};
+Struct D2 : B {..};
+Struct x:D1, D2 {..};
+
+In terms of java: lets think about the DIAMOND OF DEATH
+Repeated inheritance 
+
+		object
+
+	icomparable	Ioperable
+		
+		integer
+
+
+		B
+	D1		D2
+
+		X
+
+struct x : virtual public D1
+	   virtual public D2  <- these are both virtual inheritance
+
+
+
+
+LISKOV SUBSTITUTION PRINCIPLE:
+Let phi(x) be some property provable about an object x of some type T
+
+(phi(x) is some logical condition or expectation for some object x)
+
+Then phi(y) should be true for objects y of some type S where S is a 
+Subtype of T
+
+Void print(value & v)
+	v.print();
+
+In this example, T is value, x is v, phi prints x, does not modify though
+
+If S is not a subtype of T, this will not be true (will not be substitutable)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

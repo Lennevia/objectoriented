@@ -1,0 +1,6 @@
+
+
+1. How do we implement this data structure?
+2. What can we do with it?
+
+Looking at math.hpp and math.cpp

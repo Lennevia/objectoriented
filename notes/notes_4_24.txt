@@ -1,0 +1,92 @@
+Struct T {..}
+
+Struct S:T{...}
+
+Void(Rect & R){
+	unt x = r.u;
+
+
+}
+
+
+Struct Rect {
+	int u, int h;
+Virtual
+	void det_height(int n){
+		h=n;
+	}
+
+Struct square : rect {
+	void set_height(int n){
+		h = n;
+		u = n;
+	}
+};
+
+To get rid of issue, get rid of mutability.
+
+Struct Rect {
+Virtual int area() = 0;
+};
+
+Adding mutability back in: 
+
+			Rect
+	mutable rect ^		^Square
+	
+	Rect Impl^		^mutable square
+
+				^square implementation
+
+We've gone from 2 classes to 6 classes with implementation objects and interfaces
+
+Often, we segregate the branches of hierarchies in implementations
+
+Difference between subtype and subclass? 
+A subclass is basically a derived class
+
+Subtype vs. supertype?
+A type is a way to understand bits
+
+Subset vs. superset?
+Subset is the stuff inside the superset. Int32 is a superset of the subset 16int. 
+
+
+---------------------------------------------------------------------------------
+
+Physical: 
+	component: header (.hpp) / source (.cpp)
+Example: A <- B
+	Do I need to recompile B? Ok
+	Do I need to modify B?    Ban
+
+		If you change the header, must recompile source files
+
+If class is a set of values and 
+
+What goes in header files? Prototypes, templates, so on
+If he removes a class, is it substitutable? Only if B uses the class
+What if you add code? Always substitutable
+
+Header files are kinda like classes, it's a set of declarations. Headers may have more than one class though
+
+A library is a collection of components
+
+
+ 
+What does it mean to deprecate something?
+You don't get rid of it, you mark it in the source code as something that's going to go away
+
+API compatibility: when you have some type of dependency on a physical unity, API c is the rule to recompile or nah
+
+ABI compatibility: if you break api compatibility, you probably won't care about aBI compatibility 
+ABI is more for shared libraries. 
+ABI is really about the low level stuff, once you want to edit something in the binary interface, you basically force someone 'to change everything 
+
+
+
+
+
+
+
+

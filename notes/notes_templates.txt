@@ -1,0 +1,32 @@
+T E M P L A T E S
+
+Simple algorithm called min:
+
+
+T&min(T& a, T& b){
+	if(a<b)
+		return a;
+	else
+		return b;
+}
+
+Polymorphism: whatever this algorithm is, we want it to be locked in at compile time
+
+How do we make this a template?
+*typename is the parameter
+*T is the template
+
+Template <typename T>
+T&min(T& a, T& b){
+	if(a<b)
+		return a;
+	else
+		return b;
+}
+
+Templates are not functions in C++, although they're kinda like that
+
+So when you write something like this: min<int>(3,4), it replaces every instance of T with int. Or more precisely, the template is instantiated and the template is then specialization
+
+
+You can leave out the explicit '<int>' argument and the compiler will try to figure it out.

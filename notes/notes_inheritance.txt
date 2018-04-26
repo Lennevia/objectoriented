@@ -32,7 +32,10 @@ Open/closed
 When do you use inheritance? 
 Why? To represent alternatives
 
-If a base class gives us alternatives, what do virtual functions give us? What design problem are we trying to solve with their existence? Gives us the ability to define a particular function's behavior by parts - each override gives a new line or definition added to the virtual function. 
+If a base class gives us alternatives, what do virtual functions give us? 
+What design problem are we trying to solve with their existence? 
+Gives us the ability to define a particular function's behavior by 
+parts - each override gives a new line or definition added to the virtual function. 
 
 Virtual function: literally building a table of definitions based on the derived classes.
 If you have a virtual base class, you almost certainly want a virtual destructor. 
@@ -76,7 +79,8 @@ Don't have pointers to derived classes - could end up recursively deleting from 
 
 Polymorphic: If a class has at least one virtual method, it's a polymorphic class
 
-Abstract Class: at least one sure virtual function: must have an override of this class somewhere. Cannot make direct calls to this pure virtual function
+Abstract Class: at least one sure virtual function: must have an override of this class somewhere. 
+Cannot make direct calls to this pure virtual function
 ---------------------------------------------
 
 The open/close principle:
