@@ -71,8 +71,7 @@ int main(void)
     /* Start the game. */
     std::cout << "Santa Paravia and Fiumaccio\n";
     std::cout << "\nDo you wish instructions (Y or N)? ";
-    std::getline(std::cin, string);
-//    fgets(string, 254, stdin);
+    fgets(string, 254, stdin);
     if(string[0] == 'y' || string[0] == 'Y')
         PrintInstructions();
     
@@ -80,8 +79,7 @@ int main(void)
     
     std::cout << "What will be the difficulty of this game:\n1. Apprentice\n";
     std::cout << "2. Journeyman\n3. Master\n4. Grand Master\n\nChoose: ";
-    std::getline(std::cin, string);
-//    fgets(string, 254, stdin);
+    fgets(string, 254, stdin);
     level = (int)atoi(string);
     if(level < 1)
         level = 1;
@@ -90,15 +88,13 @@ int main(void)
     for(int i = 0; i < NumOfPlayers; i++)
     {
         cout << "Who is the ruler of " <<  CityList[i] << "? ";
-        std::getline(std::cin, name);
-//        fgets(name, 24, stdin);
+        fgets(name, 24, stdin);
         
         /* Strip off the trailing \n. */
         // name.pop_back(); // This should get rid of any trailing \n
 //        name[strlen(name) - 1] = '\0'; // Not sure if this is relevant
         std::cout << "Is " << name << " a man or a woman (M or F)? ";
-        std::getline(std::cin, string);
-//        fgets(string, 3, stdin);
+        fgets(string, 3, stdin);
         if(string[0] == 'm' || string[0] == 'M')
             MorF = true; // true is male
         else
@@ -147,7 +143,7 @@ void getPlayers(&NumOfPlayers)
     std::cout << "How many people want to play (1 to 6)? ";
     cin >> people;
     
-    while(people < 0 && people > 7)
+    while(people < 0 || people > 7)
     {
         // Check for correct input and allow user to correct
         cout << "Please remember that only 1 to 6 players can play!"

@@ -7,6 +7,19 @@
  */
 #include <string.h>
 
+/* Declare our list of cities. */
+char CityList[7][15] = {"Santa Paravia", "Fiumaccio", "Torricella", "Molinetto",
+"Fontanile", "Romanga", "Monterana"};
+
+/* Declare our male titles. */
+char MaleTitles[8][15] = {"Sir", "Baron", "Count", "Marquis", "Duke",
+ "Grand Duke", "Prince", "* H.R.H. King"};
+
+/* Declare our female titles. */
+char FemaleTitles[8][15] = {"Lady", "Baroness", "Countess", "Marquise",
+"Duchess", "Grand Duchess", "Princess",
+            "* H.R.H. Queen"};
+
 /* Function definitions that use the player class */
 void InitializePlayer(player *Me, int year, int city, int level, char *name,
                       boolean MorF);
