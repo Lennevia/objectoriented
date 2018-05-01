@@ -1,15 +1,18 @@
 /*
  In this file shall live all the player related function definitions that
  are outlined in player.hpp.
- 
- 
  */
 
-#include <string.h>
-#include "player.hpp"
+/* Declare our standard C++ headers. */
+#include <string>
+#include <stdio.h>
+
+/* Our project headers */
+#include "player.h"
+#include "upkeep.h"
 
 
-void InitializePlayer(player *Me, int year, int city, int level, char *name,
+void InitializePlayer(player *Me, int year, int city, int level, std::string name,
                       bool MorF)
 {
     /* This is pretty straightforward. */
@@ -21,9 +24,9 @@ void InitializePlayer(player *Me, int year, int city, int level, char *name,
     Me->GrainPrice = 25;
     Me->GrainReserve = 5000;
     Me->IncomeTax = 5;
-    Me->IsBankrupt = False;
-    Me->IsDead = False;
-    Me->IWon = False;
+    Me->IsBankrupt = false;
+    Me->IsDead = false;
+    Me->IWon = false;
     Me->Justice = 2;
     Me->Land = 10000;
     Me->LandPrice = 10.0;
@@ -31,7 +34,7 @@ void InitializePlayer(player *Me, int year, int city, int level, char *name,
     Me->Marketplaces = 0;
     Me->Merchants = 25;
     Me->Mills = 0;
-    strcpy(Me->Name, name);
+    name.copy(Me->Name, name.length(), 0);
     Me->Nobles = 4;
     Me->OldTitle = 1;
     Me->Palace = 0;
@@ -41,7 +44,7 @@ void InitializePlayer(player *Me, int year, int city, int level, char *name,
     Me->Soldiers = 25;
     Me->TitleNum = 1;
     
-    if(Me->MaleOrFemale == True)
+    if(Me->MaleOrFemale)
         strcpy(Me->Title, MaleTitles[0]);
     else
         strcpy(Me->Title, FemaleTitles[0]);

@@ -5,7 +5,11 @@
  Needed definitions for the outlined details below can be found in
  player.cpp
  */
-#include <string.h>
+#ifndef PLAYER_H
+#define PLAYER_H
+
+#include <string>
+
 
 /* Declare our list of cities. */
 char CityList[7][15] = {"Santa Paravia", "Fiumaccio", "Torricella", "Molinetto",
@@ -20,12 +24,8 @@ char FemaleTitles[8][15] = {"Lady", "Baroness", "Countess", "Marquise",
 "Duchess", "Grand Duchess", "Princess",
             "* H.R.H. Queen"};
 
-/* Function definitions that use the player class */
-void InitializePlayer(player *Me, int year, int city, int level, char *name,
-                      boolean MorF);
-
 /* Declare our player definition. */
-struct Player
+struct player
 {
     int Cathedral;
     int Clergy;
@@ -41,7 +41,7 @@ struct Player
     int IncomeTax;
     int IncomeTaxRevenue;
     int RatsAte;
-    int Justice
+    int Justice;
     int JusticeRevenue;
     int Land;
     int Marketplaces;
@@ -65,9 +65,9 @@ struct Player
     int WhichPlayer;
     int Year;
     int YearOfDeath;
-    std::string City;
-    std::string Name;
-    std::string Title;
+    char City[15];
+    char Name[25];
+    char Title[15];
     float PublicWorks;
     float LandPrice;
     bool InvadeMe;
@@ -77,3 +77,11 @@ struct Player
     bool MaleOrFemale; // This is 2018, we should have a nonbinary option
     bool NewTitle;
 };
+
+/* Function definitions that use the player class */
+void InitializePlayer(player *Me, int year, int city, int level, std::string name,
+                      bool MorF);
+
+#endif
+
+
