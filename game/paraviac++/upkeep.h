@@ -6,6 +6,11 @@
  Needed definitions for the outlined details below can be found in
  actions.cpp
  */
+
+#include <stdio.h>
+#include <string>
+#include <stdlib.h>
+#include <iostream>
 #ifndef UPKEEP_H
 #define UPKEEP_H
 

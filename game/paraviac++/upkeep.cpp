@@ -4,16 +4,12 @@
  */
 
 /* Declare our standard C++ headers. */
-// #include <stdio.h>
-// #include <string>
 #include <time.h>
-// #include <stdlib.h>
 #include <iostream>
 
 /* Our project headers */
 #include "upkeep.h"
 #include "player.h"
-
 
 /*
  Prints instructions for the game if the player requests them at initialization

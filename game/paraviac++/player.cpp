@@ -12,7 +12,7 @@
 #include "upkeep.h"
 
 
-void InitializePlayer(player *Me, int year, int city, int level, std::string name,
+void player::InitializePlayer(player *Me, int year, int city, int level, std::string name,
                       bool MorF)
 {
     /* This is pretty straightforward. */

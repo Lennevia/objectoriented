@@ -13,23 +13,22 @@
 /* Our prototypes. */
 // int main(void);
 
-void AddRevenue(player *);
-int AttackNeighbor(player *, player *);
+// void AddRevenue(player *);
+// int AttackNeighbor(player *, player *);
 
-int limit10(int, int);
-bool CheckNewTitle(player *);
-void GenerateHarvest(player *);
-void GenerateIncome(player *);
-void ChangeTitle(player *);
-void NewLandAndGrainPrices(player *);
+// int limit10(int, int);
+// bool CheckNewTitle(player *);
+// void GenerateHarvest(player *);
+// void GenerateIncome(player *);
+// void ChangeTitle(player *);
+// void NewLandAndGrainPrices(player *);
 
-void PlayGame(player[], int);
-void NewTurn(player *, int, player [], player *);
-void AdjustTax(player *);
-void StatePurchases(player *, int, player []);
-void ShowStats(player [], int);
-void ImDead(player *);
-
+// void PlayGame(player[], int);
+// void NewTurn(player *, int, player [], player *);
+// void AdjustTax(player *);
+// void StatePurchases(player *, int, player []);
+// void ShowStats(player [], int);
+// void ImDead(player *);
 
 
 int main(void)

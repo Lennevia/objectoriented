@@ -10,7 +10,6 @@
 
 #include <string>
 
-
 /* Declare our list of cities. */
 char CityList[7][15] = {"Santa Paravia", "Fiumaccio", "Torricella", "Molinetto",
 "Fontanile", "Romanga", "Monterana"};
