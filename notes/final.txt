@@ -1,0 +1,90 @@
+Abstraction - expect a question on this
+
+What are the main language features of c++?
+Inheritance and virtual functions were the big language features
+Inheritance represents a set of alternatives
+Problem solved by virtual functions? Gives a piecewise definition: 
+		{ f1(x) ...
+	f(x) =  { ...
+		{ ...
+		  default
+	root	 derived classes that are overriden
+
+Virtual or pure virtual? If it's pure, the class is abstract, you cannot call it
+With virtual, you have a default case
+
+Main program features of generic programming?
+Template and concepts
+What design problem do templates solve? Why would you decide to make something a template?
+When you have multiple instances of the same code, like the in-class example of the min()
+Program for ints, doubles, floats, etc. Templates reduce this copy & paste effort. Helps
+solve redundancy issues. Reduce code duplication. 
+**Eliminates the duplication of hella code.**
+Climate code duplication by generating different alternatives 
+
+Are templates also used to represent alternatives?
+Ehh
+
+What issue do concepts solve?
+Defines what's expected by a template. Defines requirement. Like a base class in a hierarchy, in order to be an input here, you gotta be this. Example: Like with min, it requires the input to be ordered.
+**They provide constraints on template arguments, what's required for placeholders**
+
+Do templates solve a design problem? An implementation problem? A managerial problem?
+More of a manager problem if your bonus is dependent on how many lines of code you write
+
+Do concepts solve design problems? 
+Not really, they solve a language problem with the requirements for templates
+
+A question about polymorphism:
+
+What does it mean to be dynamically polymorphic?
+Decided at runtime
+
+Static polymorphsm, what does it mean for an algorithm to be statically poly?
+It's decided at compile time
+
+Why would you choose static over dynamic?
+Static could run faster since it's decided at compile time. 
+When do you need to have a decision made at runtime(dynamic)? 
+**Only when you know you need the behavior to change at runtime**
+1. If you have a recursive data structure
+2. Container of object whose items vary at runtime: graphics drawn on system
+3. System boundary: memory allocation is a good example
+
+There's gonna be like 5-6 questions. 7 for the true or false question. 
+
+Lipskov substitution: what does l.s. tell you? What's the princple? How do you
+use that?
+"If you can sub an object of one type with some object of another type in some context, 
+The first type is a subtype of the second"
+
+Void print(void* p) //everything converts to a void *, it's a pure address, no assignment
+	cout << p;
+Basically all types are a subtype of void pointer
+
+Int *q;
+<int*>(p);
+Q +=4; //no longer a subtype
+
+
+When updating a header file: you can add functions, but you cannot change things
+Because others might depend on it 
+
+Can you reorder member functions? No, others using it as a source will have a crashed program unless they recompile
+
+What about adding virtual functions to a clasS? It depends where:
+You can add more at the top, or at the bottom. 
+
+If you can prove that an object is substitutable, it's a subtype
+
+So what's the point of having a substitution principle?
+So updates don't break things. Lipskov is a yard stick to measure whether a substitution
+will be successful or not. Otherwise, if you make a breakages there will be more debugging, training, and so on. 
+
+
+
+
+
+
+
+
